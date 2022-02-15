@@ -58,8 +58,6 @@ button {
 .showBooks {
   border: 2px solid black;
   margin: 5px;
-  padding: 10px;
-  height: 50vh;
 }
 
 .showBooks :nth-child(even) {
