@@ -1,5 +1,5 @@
 import updateTime from './modules/date.js';
-import {BookList} from './modules/display-booklist.js';
+import { BookList } from './modules/display-booklist.js';
 import {
   bookList, addBookForm, contact, contactNav, listNav, addBooksNav, addBook, showContact,
 } from './modules/nav.js';

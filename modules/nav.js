@@ -33,4 +33,6 @@ function contact() {
   showBookList.style.display = 'none';
 }
 
-export { bookList, addBookForm, contact, listNav, addBooksNav, contactNav, addBook, showContact};
+export {
+  bookList, addBookForm, contact, listNav, addBooksNav, contactNav, addBook, showContact,
+};
