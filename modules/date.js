@@ -1,9 +1,7 @@
-import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
+function updateTime() {
+  time.innerHTML = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_FULL);
+}
 
 setInterval(updateTime, 1000);
-
-function updateTime() {
-  time.innerHTML = Date();
-}
 
 export default updateTime;

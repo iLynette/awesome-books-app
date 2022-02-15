@@ -6,9 +6,6 @@ const addBook = document.querySelector('.add-books');
 const showContact = document.querySelector('.contact');
 const showBookList = document.querySelector('.book-list');
 
-addBook.style.display = 'none';
-showContact.style.display = 'none';
-
 function bookList() {
   showBookList.style.display = 'block';
   listNav.style.color = 'blue';
@@ -17,8 +14,6 @@ function bookList() {
   addBook.style.display = 'none';
   showContact.style.display = 'none';
 }
-
-listNav.addEventListener('click', bookList);
 
 function addBookForm() {
   addBook.style.display = 'flex';
@@ -29,8 +24,6 @@ function addBookForm() {
   showContact.style.display = 'none';
 }
 
-addBooksNav.addEventListener('click', addBookForm);
-
 function contact() {
   showContact.style.display = 'flex';
   contactNav.style.color = 'blue';
@@ -40,6 +33,4 @@ function contact() {
   showBookList.style.display = 'none';
 }
 
-contactNav.addEventListener('click', contact);
-
-export { bookList, addBookForm, contact}
+export { bookList, addBookForm, contact, listNav, addBooksNav, contactNav, addBook, showContact};

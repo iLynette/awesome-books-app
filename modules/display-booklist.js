@@ -1,9 +1,4 @@
-class Book {
-  constructor(title = null, author = null) {
-    this.title = title;
-    this.author = author;
-  }
-}
+import Book from "./books.js";
 
 class BookList {
     list = [];
@@ -27,13 +22,25 @@ class BookList {
         this.list = JSON.parse(localStorage.getItem('Books'));
         document.getElementById('showBooks').innerHTML = '';
         this.list.forEach((book, index) => {
-          document.getElementById('showBooks').innerHTML += `
-                <div class="books">
-                    <div class="d-flex child">
-                        <p class="title"><b>"${book.title}"  by ${book.author}</b></p>
-                        <button class="removeBtn" onClick = 'books.remove(${index})'><b>Remove</b></button>
-                    </div>
-                </div> `;
+          const bookDiv = document.createElement('div');
+          bookDiv.classList.add('books');
+          const childDiv = document.createElement('div');
+          childDiv.classList.add('d-flex', 'child');
+          childDiv.innerHTML = `
+          <p class="title"><b>"${book.title}"  by ${book.author}</b></p>
+          `;
+          const removeButton = document.createElement('button');
+          removeButton.classList.add('removeBtn');
+          removeButton.innerHTML = '<b>Remove</b>';
+          childDiv.appendChild(removeButton);
+          bookDiv.appendChild(childDiv);
+
+          document.getElementById('showBooks').appendChild(bookDiv);
+
+          removeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.remove(index);
+          });
         });
       } else {
         document.getElementById('showBooks').innerHTML = '';
@@ -44,14 +51,7 @@ class BookList {
       this.list.splice(index, 1);
       localStorage.setItem('Books', JSON.stringify(this.list));
       this.render();
-      console.log(remove);
     }
 }
 
-const books = new BookList();
-books.render();
-document.getElementById('addBtn').addEventListener('click', () => {
-  books.addBook();
-});
-
-export default { Book, BookList}
+export { BookList };
