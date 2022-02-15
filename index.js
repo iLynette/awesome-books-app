@@ -4,9 +4,6 @@ import {
   bookList, addBookForm, contact, contactNav, listNav, addBooksNav, addBook, showContact,
 } from './modules/nav.js';
 
-const addBtn = document.querySelector('#addBtn');
-const form = document.querySelector('form');
-
 const books = new BookList();
 books.render(books);
 document.getElementById('addBtn').addEventListener('click', () => {
