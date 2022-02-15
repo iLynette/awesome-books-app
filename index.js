@@ -10,6 +10,8 @@ document.getElementById('addBtn').addEventListener('click', () => {
   books.addBook();
 });
 
+setInterval(updateTime, 1000);
+
 addBook.style.display = 'none';
 showContact.style.display = 'none';
 
