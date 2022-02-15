@@ -12,7 +12,7 @@
 - Javascript
 - VScode
 ## Live Demo
-For the link to the live demo, [Click here](https://ilynette.github.io/awesome-books/)
+For the link to the live demo, [Click here](https://ilynette.github.io/awesome-books-app/)
 ## Getting Started
 To get a local copy up and running you just need to follow the following steps;
 -Clone this repository with
